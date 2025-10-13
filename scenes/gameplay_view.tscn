@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://dtrnsgpe5umma"]
+[gd_scene load_steps=2 format=3 uid="uid://dtrnsgpe5umma"]
+
+[ext_resource type="PackedScene" uid="uid://ca8af6w4i2btf" path="res://scenes/signal_emitter.tscn" id="1_opx44"]
 
 [node name="gameplay_view" type="Node2D"]
+
+[node name="signal_emitter" parent="." instance=ExtResource("1_opx44")]
+position = Vector2(96, 96)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca8af6w4i2btf"]
+
+[ext_resource type="Texture2D" uid="uid://sao2prx1t4v7" path="res://assets/icon.svg" id="1_rmhdd"]
+[ext_resource type="Script" uid="uid://bb1m84a1dgffi" path="res://scripts/signal_emitter.gd" id="2_umso6"]
+
+[node name="signal_emitter" type="Sprite2D"]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rmhdd")
+script = ExtResource("2_umso6")
