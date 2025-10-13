@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 100
+const speed = 250
 
 func _physics_process(delta: float) -> void:
 	velocity = Vector2(speed * delta, 0).rotated(self.rotation)
