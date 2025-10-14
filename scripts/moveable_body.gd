@@ -23,3 +23,6 @@ func _process(delta: float) -> void:
 	$points.clear_points()
 	for i in points:
 		$points.add_point(i - self.position)
+
+func _ready() -> void:
+	$points.rotation = self.rotation * -1  

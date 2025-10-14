@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ca8af6w4i2btf" path="res://scenes/signal_emitter.tscn" id="1_opx44"]
 [ext_resource type="PackedScene" uid="uid://dw036t4flpb1t" path="res://scenes/wall_angled.tscn" id="3_a4xli"]
-[ext_resource type="PackedScene" uid="uid://cgygm3ca3nrxd" path="res://scenes/moveable_body.tscn" id="4_7nf73"]
+[ext_resource type="PackedScene" uid="uid://skyxgx56khx2" path="res://scenes/moveable_body_angled.tscn" id="4_7nf73"]
 [ext_resource type="PackedScene" uid="uid://dy21vot1yevtm" path="res://scenes/button.tscn" id="4_a4xli"]
 
 [node name="gameplay_view" type="Node2D"]
@@ -16,9 +16,10 @@ position = Vector2(928, 96)
 [node name="button" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
 position = Vector2(928, 288)
 rotation = 1.5707964
-Target = NodePath("../moveable_body")
+Target = NodePath("../moveable_body_angled")
 
-[node name="moveable_body" parent="." instance=ExtResource("4_7nf73")]
+[node name="moveable_body_angled" parent="." groups=["button"] instance=ExtResource("4_7nf73")]
 position = Vector2(928, 352)
+rotation = 3.1415927
 points = [Vector2(928, 352), Vector2(96, 352), Vector2(96, 96)]
 speed = 512

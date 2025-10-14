@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://skyxgx56khx2"]
+
+[ext_resource type="Script" uid="uid://cj22gbck8o5ag" path="res://scripts/moveable_body.gd" id="1_yii2u"]
+
+[node name="moveable_body_angled" type="AnimatableBody2D" groups=["wall_angled"]]
+script = ExtResource("1_yii2u")
+
+[node name="points" type="Line2D" parent="."]
+width = 16.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(32, 32, 32, -32, -32, -32)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(32, 32, 32, -32, -32, -32)
