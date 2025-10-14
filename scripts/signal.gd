@@ -14,6 +14,9 @@ func _physics_process(delta: float) -> void:
 				self.rotation_degrees += -90
 			else:
 				self.rotation_degrees += 180
+		elif $ray.get_collider().is_in_group("button"):
+			$ray.get_collider().press()
+			self.rotation_degrees += 180
 		else:
 			self.rotation_degrees += 180
 func _input(event: InputEvent) -> void:

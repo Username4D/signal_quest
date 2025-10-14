@@ -20,6 +20,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 wall_angled=""
+button=""
 
 [input]
 
