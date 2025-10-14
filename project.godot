@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+wall_angled=""
+
 [input]
 
 ui_start={
