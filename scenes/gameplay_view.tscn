@@ -11,54 +11,59 @@
 [node name="gameplay_view" type="Node2D"]
 script = ExtResource("1_exiar")
 
-[node name="signal_emitter" parent="." instance=ExtResource("1_opx44")]
+[node name="static_gp_objects" type="Node2D" parent="."]
+
+[node name="signal_emitter" parent="static_gp_objects" instance=ExtResource("1_opx44")]
 position = Vector2(96, 96)
 
-[node name="wall_angled" parent="." instance=ExtResource("3_a4xli")]
+[node name="wall_angled" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
 position = Vector2(928, 96)
-rotation = 12.566371
 
-[node name="button" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
+[node name="button" parent="static_gp_objects" node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
 position = Vector2(928, 288)
 rotation = 1.5707964
 Target = NodePath("../rotator")
 
-[node name="button2" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
+[node name="button2" parent="static_gp_objects" node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
 position = Vector2(992, 352)
-rotation = 3.1415927
+rotation = -3.1415925
 Target = NodePath("../rotator")
 
-[node name="button3" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
+[node name="button3" parent="static_gp_objects" node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
 position = Vector2(864, 352)
 Target = NodePath("../rotator")
 
-[node name="rotator" parent="." node_paths=PackedStringArray("target_n", "target_o", "target_s", "target_w") instance=ExtResource("4_7nf73")]
+[node name="rotator" parent="static_gp_objects" node_paths=PackedStringArray("target_n", "target_o", "target_s", "target_w") instance=ExtResource("4_7nf73")]
 position = Vector2(928, 352)
 target_n = NodePath("../button")
 target_o = NodePath("../button2")
 target_s = NodePath("../wall_angled4")
 target_w = NodePath("../button3")
 
-[node name="wall_angled2" parent="." instance=ExtResource("3_a4xli")]
+[node name="wall_angled2" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
 position = Vector2(32, 96)
 rotation = 4.712389
 
-[node name="wall_angled5" parent="." instance=ExtResource("3_a4xli")]
+[node name="wall_angled5" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
 position = Vector2(96, 288)
-rotation = 4.712389
+rotation = -1.5707964
 
-[node name="wall_angled3" parent="." instance=ExtResource("3_a4xli")]
+[node name="wall_angled3" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
 position = Vector2(32, 352)
 rotation = 3.1415927
 
-[node name="wall_angled4" parent="." instance=ExtResource("3_a4xli")]
+[node name="wall_angled4" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
 position = Vector2(928, 416)
-rotation = 4.712389
+rotation = -1.5707964
 
-[node name="gated_button" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("5_7nf73")]
+[node name="gated_button" parent="static_gp_objects" node_paths=PackedStringArray("Target") instance=ExtResource("5_7nf73")]
 position = Vector2(544, 96)
 Target = NodePath("../toggle_wall")
 
-[node name="toggle_wall" parent="." instance=ExtResource("6_66ihu")]
+[node name="toggle_wall" parent="static_gp_objects" instance=ExtResource("6_66ihu")]
 position = Vector2(544, 320)
 scale = Vector2(1, 2)
+
+[node name="user_gp_objects" type="Node2D" parent="."]
+
+[node name="signals" type="Node2D" parent="."]

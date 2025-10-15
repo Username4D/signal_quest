@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 			elif fmod(round($ray.get_collider().rotation_degrees ) + 270, 360) == round(self.rotation_virtual) or fmod(round($ray.get_collider().rotation_degrees ) - 90, 360) == round(self.rotation_virtual):
 				self.rotation_virtual += -90
 			else:
+				
 				self.rotation_virtual += 180
 			
 		
@@ -28,15 +29,11 @@ func _physics_process(delta: float) -> void:
 		else:
 			self.rotation_virtual += 180
 	self.rotation_virtual = round(self.rotation_virtual)
-	if self.rotation_virtual >= 360:
-		self.rotation_virtual -= 360
-	if self.rotation_virtual < 0.0:
-
-		self.rotate(deg_to_rad(360))
+	self.rotation_virtual = fmod(rotation_virtual, 360)
 	$ray.rotation_degrees = rotation_virtual
 	move_and_collide(velocity)
 func stop() -> void:
 	self.queue_free()
 
 func _ready() -> void:
-	self.get_parent().build.connect(stop)
+	self.get_parent().get_parent().build.connect(stop)
