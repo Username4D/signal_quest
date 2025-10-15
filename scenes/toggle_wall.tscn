@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cibwvmvqkdyqq"]
+
+[ext_resource type="Script" uid="uid://boxftww6keds2" path="res://scripts/toggle_wall.gd" id="1_kwbpx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8sp1"]
+size = Vector2(16, 64)
+
+[sub_resource type="QuadMesh" id="QuadMesh_oxi6q"]
+size = Vector2(16, 64)
+
+[node name="toggle_wall" type="StaticBody2D"]
+script = ExtResource("1_kwbpx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k8sp1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_oxi6q")
