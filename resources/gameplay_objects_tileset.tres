@@ -1,0 +1,30 @@
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://b0xsw3lwvixpo"]
+
+[ext_resource type="PackedScene" uid="uid://dy21vot1yevtm" path="res://scenes/button.tscn" id="1_50xa7"]
+[ext_resource type="PackedScene" uid="uid://3gg7kmtytfne" path="res://scenes/wall.tscn" id="2_eiakb"]
+[ext_resource type="PackedScene" uid="uid://dw036t4flpb1t" path="res://scenes/wall_angled.tscn" id="3_v2851"]
+[ext_resource type="PackedScene" uid="uid://dtrnsgpe5umma" path="res://scenes/gameplay_view.tscn" id="4_lnico"]
+[ext_resource type="PackedScene" uid="uid://c5tn4jb8djnn5" path="res://scenes/gated_button.tscn" id="5_iogob"]
+[ext_resource type="PackedScene" uid="uid://cgygm3ca3nrxd" path="res://scenes/moveable_body.tscn" id="6_snd8s"]
+[ext_resource type="PackedScene" uid="uid://skyxgx56khx2" path="res://scenes/moveable_body_angled.tscn" id="7_j057w"]
+[ext_resource type="PackedScene" uid="uid://x4u5d6vrkaax" path="res://scenes/rotator.tscn" id="8_vcjn6"]
+[ext_resource type="PackedScene" uid="uid://dxmotkl4kj0te" path="res://scenes/signal.tscn" id="9_5re2c"]
+[ext_resource type="PackedScene" uid="uid://ca8af6w4i2btf" path="res://scenes/signal_emitter.tscn" id="10_5jqgv"]
+[ext_resource type="PackedScene" uid="uid://cibwvmvqkdyqq" path="res://scenes/toggle_wall.tscn" id="11_y3s5a"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8hg37"]
+scenes/1/scene = ExtResource("1_50xa7")
+scenes/2/scene = ExtResource("4_lnico")
+scenes/3/scene = ExtResource("5_iogob")
+scenes/4/scene = ExtResource("6_snd8s")
+scenes/5/scene = ExtResource("7_j057w")
+scenes/6/scene = ExtResource("8_vcjn6")
+scenes/7/scene = ExtResource("9_5re2c")
+scenes/8/scene = ExtResource("10_5jqgv")
+scenes/9/scene = ExtResource("11_y3s5a")
+scenes/10/scene = ExtResource("2_eiakb")
+scenes/11/scene = ExtResource("3_v2851")
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetScenesCollectionSource_8hg37")
