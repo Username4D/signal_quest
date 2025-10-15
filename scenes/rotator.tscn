@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://x4u5d6vrkaax"]
+
+[ext_resource type="Script" uid="uid://c168vr1ja8kou" path="res://scripts/rotator.gd" id="1_r08b0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r08b0"]
+size = Vector2(64, 64)
+
+[sub_resource type="QuadMesh" id="QuadMesh_a8cdp"]
+
+[node name="rotator" type="AnimatableBody2D"]
+script = ExtResource("1_r08b0")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r08b0")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+self_modulate = Color(0.18000486, 0.18000486, 0.18000486, 1)
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_a8cdp")
+
+[node name="n" type="Node2D" parent="."]
+position = Vector2(0, -64)
+
+[node name="o" type="Node2D" parent="."]
+position = Vector2(64, 0)
+
+[node name="s" type="Node2D" parent="."]
+position = Vector2(0, 64)
+
+[node name="w" type="Node2D" parent="."]
+position = Vector2(-64, 0)
