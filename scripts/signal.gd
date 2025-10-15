@@ -35,6 +35,8 @@ func _physics_process(delta: float) -> void:
 		self.rotate(deg_to_rad(360))
 	$ray.rotation_degrees = rotation_virtual
 	move_and_collide(velocity)
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_start"):
-		self.queue_free()
+func stop() -> void:
+	self.queue_free()
+
+func _ready() -> void:
+	self.get_parent().build.connect(stop)
