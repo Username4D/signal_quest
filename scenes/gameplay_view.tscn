@@ -1,69 +1,44 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtrnsgpe5umma"]
+[gd_scene load_steps=8 format=4 uid="uid://dtrnsgpe5umma"]
 
 [ext_resource type="Script" uid="uid://uylpcw88qumq" path="res://scripts/gameplay_view.gd" id="1_exiar"]
-[ext_resource type="PackedScene" uid="uid://ca8af6w4i2btf" path="res://scenes/signal_emitter.tscn" id="1_opx44"]
-[ext_resource type="PackedScene" uid="uid://dw036t4flpb1t" path="res://scenes/wall_angled.tscn" id="3_a4xli"]
-[ext_resource type="PackedScene" uid="uid://x4u5d6vrkaax" path="res://scenes/rotator.tscn" id="4_7nf73"]
-[ext_resource type="PackedScene" uid="uid://dy21vot1yevtm" path="res://scenes/button.tscn" id="4_a4xli"]
-[ext_resource type="PackedScene" uid="uid://c5tn4jb8djnn5" path="res://scenes/gated_button.tscn" id="5_7nf73"]
-[ext_resource type="PackedScene" uid="uid://cibwvmvqkdyqq" path="res://scenes/toggle_wall.tscn" id="6_66ihu"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="2_0qrwo"]
+[ext_resource type="TileSet" uid="uid://b0xsw3lwvixpo" path="res://resources/gameplay_objects_tileset.tres" id="2_khje6"]
+[ext_resource type="PackedScene" uid="uid://ca8af6w4i2btf" path="res://scenes/signal_emitter.tscn" id="4_a4xli"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4xli"]
+shader = ExtResource("2_0qrwo")
+shader_parameter/topleft = Color(0, 1, 0, 1)
+shader_parameter/topright = Color(0.3882353, 0.6862745, 0.7176471, 1)
+shader_parameter/bottomleft = Color(0, 0.6392157, 0.7921569, 1)
+shader_parameter/bottomright = Color(0, 0.3764706, 0.69803923, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7nf73"]
+shader = ExtResource("2_0qrwo")
+shader_parameter/topleft = Color(0.4117647, 1, 0.26666668, 1)
+shader_parameter/topright = Color(1, 1, 1, 1)
+shader_parameter/bottomleft = Color(0.7607843, 1, 1, 1)
+shader_parameter/bottomright = Color(0, 0.36078432, 0.5294118, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_66ihu"]
 
 [node name="gameplay_view" type="Node2D"]
 script = ExtResource("1_exiar")
 
-[node name="static_gp_objects" type="Node2D" parent="."]
+[node name="static_gp_objects" type="TileMapLayer" parent="."]
+material = SubResource("ShaderMaterial_a4xli")
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAAAAAEAAgABAAAAAAABAAIAAgABAAAAAAACAAMAAgAAAAAAAAADAAQAAgABAAAAAAABAAEAAgAAAAAAAAACAAEAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAADAAMAAgAAAAAAAAACAAIAAgAAAAAAAAAJAAMAAgAAAAAAAAAKAAMAAgAAAAAAAAALAAMAAgAAAAAAAAAMAAIAAgAAAAAAAAANAAIAAgAAAAAAAAAOAAIAAgAAAAAAAAAPAAMAAgAAAAAAAAAPAAQAAgAAAAAAAAAOAAUAAgAAAAAAAAANAAUAAgAAAAAAAAAMAAYAAgAAAAAAAAALAAcAAgAAAAAAAAAKAAgAAgAAAAAAAAAJAAgAAgAAAAAAAAAIAAkAAgAAAAAAAAAIAAgAAgAAAAAAAAAIAAcAAgAAAAAAAAAIAAYAAgAAAAAAAAAJAAYAAgAAAAAAAAAKAAUAAgAAAAAAAAALAAUAAgAAAAAAAAAMAAQAAgAAAAAAAAANAAQAAgAAAAAAAAALAAYAAgAAAAAAAAAMAAUAAgAAAAAAAAAOAAQAAgAAAAAAAAAKAAYAAgAAAAAAAAALAAQAAgAAAAAAAAAMAAMAAgAAAAAAAAAJAAcAAgAAAAAAAAAOAAMAAgAAAAAAAAAPAAIAAgAAAAAAAAAKAAcAAgAAAAAAAAAEAAYAAgADAAAAAAAEAAcAAgADAAAAAAAEAAgAAgADAAAAAAAFAAgAAgADAAAAAAAMAAAAAgADAAAAAAANAAAAAgADAAAAAAAOAAAAAgADAAAAAAAPAAAAAgADAAAAAAAQAAAAAgADAAAAAAARAAAAAgADAAAAAAASAAAAAgADAAAAAAARAAEAAgADAAAAAAARAAIAAgADAAAAAAAQAAIAAgADAAAAAAAQAAMAAgADAAAAAAAQAAQAAgADAAAAAAARAAUAAgADAAAAAAARAAYAAgADAAAAAAARAAcAAgADAAAAAAARAAgAAgADAAAAAAAQAAgAAgADAAAAAAAPAAgAAgADAAAAAAA=")
+tile_set = ExtResource("2_khje6")
 
-[node name="signal_emitter" parent="static_gp_objects" instance=ExtResource("1_opx44")]
-position = Vector2(96, 96)
+[node name="signal_emitter" parent="static_gp_objects" instance=ExtResource("4_a4xli")]
+position = Vector2(384, 64)
 
-[node name="wall_angled" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
-position = Vector2(928, 96)
-
-[node name="button" parent="static_gp_objects" node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
-position = Vector2(928, 288)
-rotation = 1.5707964
-Target = NodePath("../rotator")
-
-[node name="button2" parent="static_gp_objects" node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
-position = Vector2(992, 352)
-rotation = -3.1415925
-Target = NodePath("../rotator")
-
-[node name="button3" parent="static_gp_objects" node_paths=PackedStringArray("Target") instance=ExtResource("4_a4xli")]
-position = Vector2(864, 352)
-Target = NodePath("../rotator")
-
-[node name="rotator" parent="static_gp_objects" node_paths=PackedStringArray("target_n", "target_o", "target_s", "target_w") instance=ExtResource("4_7nf73")]
-position = Vector2(928, 352)
-target_n = NodePath("../button")
-target_o = NodePath("../button2")
-target_s = NodePath("../wall_angled4")
-target_w = NodePath("../button3")
-
-[node name="wall_angled2" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
-position = Vector2(32, 96)
-rotation = 4.712389
-
-[node name="wall_angled5" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
-position = Vector2(96, 288)
-rotation = -1.5707964
-
-[node name="wall_angled3" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
-position = Vector2(32, 352)
-rotation = 3.1415927
-
-[node name="wall_angled4" parent="static_gp_objects" instance=ExtResource("3_a4xli")]
-position = Vector2(928, 416)
-rotation = -1.5707964
-
-[node name="gated_button" parent="static_gp_objects" node_paths=PackedStringArray("Target") instance=ExtResource("5_7nf73")]
-position = Vector2(544, 96)
-Target = NodePath("../toggle_wall")
-
-[node name="toggle_wall" parent="static_gp_objects" instance=ExtResource("6_66ihu")]
-position = Vector2(544, 320)
-scale = Vector2(1, 2)
-
-[node name="user_gp_objects" type="Node2D" parent="."]
+[node name="user_gp_objects" type="TileMapLayer" parent="."]
 
 [node name="signals" type="Node2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_7nf73")
+position = Vector2(591.75, 335.75)
+scale = Vector2(1184.5, 672.5)
+mesh = SubResource("QuadMesh_66ihu")
