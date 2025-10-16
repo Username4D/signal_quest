@@ -23,6 +23,11 @@ wall_angled=""
 button=""
 signal=""
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+theme/default_font_generate_mipmaps=true
+
 [input]
 
 ui_start={

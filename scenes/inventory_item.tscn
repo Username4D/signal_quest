@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://crwtc42uurksi"]
+
+[ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="1_u4rwp"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_y87vu"]
+[ext_resource type="Script" uid="uid://d1kalmkxw6m4i" path="res://scripts/inventory_item.gd" id="2_letey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvb6e"]
+resource_local_to_scene = true
+shader = ExtResource("1_y87vu")
+shader_parameter/topleft = Color(0.4117647, 1, 0.26666668, 1)
+shader_parameter/topright = Color(1, 1, 1, 1)
+shader_parameter/bottomleft = Color(0.7607843, 1, 1, 1)
+shader_parameter/bottomright = Color(0, 0.36078432, 0.5294118, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_letey"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y87vu"]
+bg_color = Color(0, 0, 0, 0.06666667)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvb6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkx7q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wkqsn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32thy"]
+resource_local_to_scene = true
+atlas = ExtResource("1_u4rwp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nc11c"]
+font_color = Color(1, 1, 1, 0.47058824)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="inventory_item" type="Button"]
+material = SubResource("ShaderMaterial_uvb6e")
+custom_minimum_size = Vector2(96, 96)
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_letey")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y87vu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uvb6e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bkx7q")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wkqsn")
+icon = SubResource("AtlasTexture_32thy")
+icon_alignment = 1
+script = ExtResource("2_letey")
+
+[node name="amount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 72.0
+text = "1"
+label_settings = SubResource("LabelSettings_nc11c")
+horizontal_alignment = 2
+vertical_alignment = 2
