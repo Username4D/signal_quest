@@ -6,10 +6,21 @@ var ideal_position = Vector2.ZERO
 @export var state_pressed = true
 func _process(delta: float) -> void:
 	if self.state_pressed:
-		$sprite.scale = Vector2(0.7, 0.7)
+		if self.get_parent().get_parent().get_node("static_gp_objects").get_cell_source_id(psnapped(self.position) / 64) == -1:
+			$sprite.scale = Vector2(0.8,0.8)
+			ideal_position = psnapped(get_global_mouse_position() - Vector2(32,32))
+		else:
+			$sprite.scale = Vector2(0.5,0.5)
+			ideal_position = get_global_mouse_position() - Vector2(32,32)
 		ideal_position = psnapped(get_global_mouse_position() - Vector2(32,32))
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			state_pressed = false
+			if not self.get_parent().get_parent().get_node("static_gp_objects").get_cell_source_id(psnapped(self.position) / 64) == -1:
+				self.queue_free()
+			for i in self.get_parent().get_children():
+				if i.position == ideal_position and i.name != self.name:
+				
+					i.queue_free()
 	else:
 		$sprite.scale = Vector2.ONE
 	self.position = self.position.move_toward(ideal_position, 1024* delta)
@@ -19,8 +30,7 @@ func _ready() -> void:
 func psnapped(position: Vector2):
 	return round(position / 64) * 64
 
-func _on_button_up() -> void:
-	state_pressed = false
+
 
 func _on_button_down() -> void:
 	state_pressed = true
