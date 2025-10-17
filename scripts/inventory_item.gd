@@ -5,7 +5,7 @@ var atlas_position = {"wall": Vector2(0,0), "wall_angled": Vector2(64,0), "signa
 var placed_object_scene = preload("res://scenes/placed_object.tscn")
 
 func _ready() -> void:
-	self.icon.region = Rect2(atlas_position[self.name], Vector2(64,64))
+	self.icon.region = Rect2(atlas_position[self.name] * 2, Vector2(128,128))
 
 func _process(delta: float) -> void:
 	$amount.text = var_to_str(gameplay_handler.inventory[self.name])

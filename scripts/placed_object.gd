@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 		$sprite.scale = Vector2.ONE
 	self.position = self.position.move_toward(ideal_position, 1024* delta)
 func _ready() -> void:
-	$sprite.texture.region = Rect2(atlas_position[Item], Vector2(64,64))
+	$sprite.texture.region = Rect2(atlas_position[Item] * 2, Vector2(128,128))
 	ideal_position = self.position
 func psnapped(position: Vector2):
 	return round(position / 64) * 64

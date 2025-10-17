@@ -37,6 +37,7 @@ material = SubResource("ShaderMaterial_uvb6e")
 custom_minimum_size = Vector2(96, 96)
 offset_right = 96.0
 offset_bottom = 96.0
+theme_override_constants/icon_max_width = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_letey")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y87vu")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_uvb6e")
