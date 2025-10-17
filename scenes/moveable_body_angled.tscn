@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://skyxgx56khx2"]
+[gd_scene load_steps=6 format=3 uid="uid://skyxgx56khx2"]
 
 [ext_resource type="Script" uid="uid://cj22gbck8o5ag" path="res://scripts/moveable_body.gd" id="1_yii2u"]
 [ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="2_orykq"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="2_qb8x3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ikxye"]
+shader = ExtResource("2_qb8x3")
+shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qb8x3"]
 atlas = ExtResource("2_orykq")
@@ -17,5 +22,6 @@ width = 16.0
 polygon = PackedVector2Array(32, 32, 32, -32, -32, -32)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ikxye")
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_qb8x3")

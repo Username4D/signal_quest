@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5tn4jb8djnn5"]
+[gd_scene load_steps=7 format=3 uid="uid://c5tn4jb8djnn5"]
 
 [ext_resource type="Script" uid="uid://d1ids7ksmtjgr" path="res://scripts/gated_button.gd" id="1_4osu0"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="2_5v3jf"]
 [ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="2_bsppj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsppj"]
 size = Vector2(16, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_02gfd"]
+shader = ExtResource("2_5v3jf")
+shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v3jf"]
 atlas = ExtResource("2_bsppj")
@@ -17,6 +22,7 @@ script = ExtResource("1_4osu0")
 shape = SubResource("RectangleShape2D_bsppj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_02gfd")
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_5v3jf")
 

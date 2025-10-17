@@ -7,10 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uvb6e"]
 resource_local_to_scene = true
 shader = ExtResource("1_y87vu")
-shader_parameter/topleft = Color(0.4117647, 1, 0.26666668, 1)
-shader_parameter/topright = Color(1, 1, 1, 1)
-shader_parameter/bottomleft = Color(0.7607843, 1, 1, 1)
-shader_parameter/bottomright = Color(0, 0.36078432, 0.5294118, 1)
+shader_parameter/background = true
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_letey"]
 

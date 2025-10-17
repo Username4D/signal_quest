@@ -8,22 +8,18 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a4xli"]
 shader = ExtResource("2_0qrwo")
-shader_parameter/topleft = Color(0, 1, 0, 1)
-shader_parameter/topright = Color(0.3882353, 0.6862745, 0.7176471, 1)
-shader_parameter/bottomleft = Color(0, 0.6392157, 0.7921569, 1)
-shader_parameter/bottomright = Color(0, 0.3764706, 0.69803923, 1)
+shader_parameter/background = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7nf73"]
 shader = ExtResource("2_0qrwo")
-shader_parameter/topleft = Color(0.4117647, 1, 0.26666668, 1)
-shader_parameter/topright = Color(1, 1, 1, 1)
-shader_parameter/bottomleft = Color(0.7607843, 1, 1, 1)
-shader_parameter/bottomright = Color(0, 0.36078432, 0.5294118, 1)
+shader_parameter/background = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_66ihu"]
 
 [node name="gameplay_view" type="Node2D"]
 script = ExtResource("1_exiar")
+colors = [Color(0.9500058, 0.40381473, 0.99999887, 1), Color(0.53886443, 0.5989664, 0.9759663, 1), Color(0.61099464, 0.5515236, 0.9686268, 1), Color(0.28183243, 0.4905318, 0.89671236, 1)]
+colorsbg = [Color(0.9801126, 0.7137965, 1, 1), Color(0.6781554, 0.72826487, 0.9854236, 1), Color(0.7724066, 0.75353724, 0.9827942, 1), Color(0.5054403, 0.66472226, 0.9643124, 1)]
 
 [node name="static_gp_objects" type="TileMapLayer" parent="."]
 material = SubResource("ShaderMaterial_a4xli")
@@ -32,7 +28,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAA
 tile_set = ExtResource("2_khje6")
 
 [node name="signal_emitter" parent="static_gp_objects" instance=ExtResource("4_a4xli")]
-position = Vector2(352, 96)
+position = Vector2(704, 192)
+scale = Vector2(1, 1)
 
 [node name="user_gp_objects" type="TileMapLayer" parent="."]
 

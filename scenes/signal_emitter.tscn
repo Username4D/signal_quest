@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca8af6w4i2btf"]
+[gd_scene load_steps=6 format=3 uid="uid://ca8af6w4i2btf"]
 
 [ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="1_umso6"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_v1t8v"]
 [ext_resource type="Script" uid="uid://bb1m84a1dgffi" path="res://scripts/signal_emitter.gd" id="2_umso6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pm83x"]
+shader = ExtResource("1_v1t8v")
+shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1t8v"]
 atlas = ExtResource("1_umso6")
@@ -9,6 +14,7 @@ region = Rect2(256, 0, 128, 128)
 filter_clip = true
 
 [node name="signal_emitter" type="Sprite2D"]
+material = SubResource("ShaderMaterial_pm83x")
 position = Vector2(0, 9.536743e-07)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_v1t8v")

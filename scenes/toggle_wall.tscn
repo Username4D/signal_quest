@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cibwvmvqkdyqq"]
+[gd_scene load_steps=6 format=3 uid="uid://cibwvmvqkdyqq"]
 
 [ext_resource type="Script" uid="uid://boxftww6keds2" path="res://scripts/toggle_wall.gd" id="1_kwbpx"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="2_k8sp1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8sp1"]
 size = Vector2(16, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxi6q"]
+shader = ExtResource("2_k8sp1")
+shader_parameter/background = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_oxi6q"]
 size = Vector2(32, 64)
@@ -15,4 +20,5 @@ script = ExtResource("1_kwbpx")
 shape = SubResource("RectangleShape2D_k8sp1")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_oxi6q")
 mesh = SubResource("QuadMesh_oxi6q")

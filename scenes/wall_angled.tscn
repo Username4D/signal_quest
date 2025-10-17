@@ -1,13 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw036t4flpb1t"]
+[gd_scene load_steps=5 format=3 uid="uid://dw036t4flpb1t"]
 
-[ext_resource type="Texture2D" uid="uid://sao2prx1t4v7" path="res://assets/icon.svg" id="1_jytgm"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_6qnbd"]
+[ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="1_jytgm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s52u2"]
+shader = ExtResource("1_6qnbd")
+shader_parameter/background = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qnbd"]
+atlas = ExtResource("1_jytgm")
+region = Rect2(128, 0, 128, 128)
 
 [node name="wall_angled" type="StaticBody2D" groups=["wall_angled"]]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-96, -64)
-texture = ExtResource("1_jytgm")
-polygon = PackedVector2Array(64, 32, 128, 96, 128, 32)
-
 [node name="hitbox" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-32, -32, 32, 32, 32, -32)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_s52u2")
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_6qnbd")

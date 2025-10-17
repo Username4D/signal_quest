@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://x4u5d6vrkaax"]
+[gd_scene load_steps=7 format=3 uid="uid://x4u5d6vrkaax"]
 
 [ext_resource type="Script" uid="uid://c168vr1ja8kou" path="res://scripts/rotator.gd" id="1_r08b0"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="2_mlc4y"]
 [ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="2_wqnld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r08b0"]
 size = Vector2(64, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6l07"]
+shader = ExtResource("2_mlc4y")
+shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mlc4y"]
 atlas = ExtResource("2_wqnld")
@@ -29,5 +34,6 @@ position = Vector2(0, 64)
 position = Vector2(-64, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_k6l07")
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_mlc4y")
