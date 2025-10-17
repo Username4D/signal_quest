@@ -1,27 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://wwori4ekxduy"]
+[gd_scene load_steps=2 format=3 uid="uid://wwori4ekxduy"]
 
-[ext_resource type="PackedScene" uid="uid://crwtc42uurksi" path="res://scenes/inventory_item.tscn" id="1_qw0r6"]
-[ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="2_hj2ta"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ty45s"]
-resource_local_to_scene = true
-atlas = ExtResource("2_hj2ta")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_53g1v"]
-resource_local_to_scene = true
-atlas = ExtResource("2_hj2ta")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yyk2a"]
-resource_local_to_scene = true
-atlas = ExtResource("2_hj2ta")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uae8j"]
-resource_local_to_scene = true
-atlas = ExtResource("2_hj2ta")
-region = Rect2(0, 0, 64, 64)
+[ext_resource type="Script" uid="uid://joqchhr0ufo0" path="res://scripts/inventory.gd" id="1_53g1v"]
 
 [node name="inventory" type="HBoxContainer"]
 offset_left = 128.0
@@ -29,19 +8,4 @@ offset_top = 544.0
 offset_right = 1024.0
 offset_bottom = 640.0
 alignment = 1
-
-[node name="wall" parent="." instance=ExtResource("1_qw0r6")]
-layout_mode = 2
-icon = SubResource("AtlasTexture_ty45s")
-
-[node name="wall_angled" parent="." instance=ExtResource("1_qw0r6")]
-layout_mode = 2
-icon = SubResource("AtlasTexture_53g1v")
-
-[node name="button" parent="." instance=ExtResource("1_qw0r6")]
-layout_mode = 2
-icon = SubResource("AtlasTexture_yyk2a")
-
-[node name="signal_emitter" parent="." instance=ExtResource("1_qw0r6")]
-layout_mode = 2
-icon = SubResource("AtlasTexture_uae8j")
+script = ExtResource("1_53g1v")

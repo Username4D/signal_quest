@@ -31,7 +31,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAA
 tile_set = ExtResource("2_khje6")
 
 [node name="signal_emitter" parent="static_gp_objects" instance=ExtResource("4_a4xli")]
-position = Vector2(384, 64)
+position = Vector2(352, 96)
 
 [node name="user_gp_objects" type="TileMapLayer" parent="."]
 

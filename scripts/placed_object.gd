@@ -16,10 +16,12 @@ func _process(delta: float) -> void:
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			state_pressed = false
 			if not self.get_parent().get_parent().get_node("static_gp_objects").get_cell_source_id(psnapped(self.position) / 64) == -1:
+				gameplay_handler.inventory[Item] += 1
 				self.queue_free()
+				
 			for i in self.get_parent().get_children():
 				if i.position == ideal_position and i.name != self.name:
-				
+					gameplay_handler.inventory[i.Item] += 1
 					i.queue_free()
 	else:
 		$sprite.scale = Vector2.ONE

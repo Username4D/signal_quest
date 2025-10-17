@@ -13,6 +13,10 @@ config_version=5
 config/name="Signal_game"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
+[autoload]
+
+gameplay_handler="*res://scripts/gameplay_handler.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")

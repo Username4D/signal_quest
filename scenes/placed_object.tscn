@@ -15,6 +15,7 @@ shader_parameter/bottomright = Color(0, 0.3764706, 0.69803923, 1)
 resource_local_to_scene = true
 atlas = ExtResource("2_vysjg")
 region = Rect2(0, 0, 64, 64)
+filter_clip = true
 
 [node name="placed_object" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
