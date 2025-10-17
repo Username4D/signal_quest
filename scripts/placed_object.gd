@@ -6,6 +6,8 @@ var ideal_position = Vector2.ZERO
 @export var state_pressed = true
 func _process(delta: float) -> void:
 	if self.state_pressed:
+		if Input.is_action_just_pressed("ui_rotate"):
+			$sprite.rotation_degrees += 90
 		if self.get_parent().get_parent().get_node("static_gp_objects").get_cell_source_id(psnapped(self.position) / 64) == -1:
 			$sprite.scale = Vector2(0.8,0.8)
 			ideal_position = psnapped(get_global_mouse_position() - Vector2(32,32))
