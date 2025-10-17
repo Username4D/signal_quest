@@ -1,22 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://x4u5d6vrkaax"]
+[gd_scene load_steps=5 format=3 uid="uid://x4u5d6vrkaax"]
 
 [ext_resource type="Script" uid="uid://c168vr1ja8kou" path="res://scripts/rotator.gd" id="1_r08b0"]
+[ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="2_wqnld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r08b0"]
 size = Vector2(64, 64)
 
-[sub_resource type="QuadMesh" id="QuadMesh_a8cdp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlc4y"]
+atlas = ExtResource("2_wqnld")
+region = Rect2(0, 128, 128, 128)
 
 [node name="rotator" type="AnimatableBody2D"]
 script = ExtResource("1_r08b0")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r08b0")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-self_modulate = Color(0.18000486, 0.18000486, 0.18000486, 1)
-scale = Vector2(64, 64)
-mesh = SubResource("QuadMesh_a8cdp")
 
 [node name="n" type="Node2D" parent="."]
 position = Vector2(0, -64)
@@ -29,3 +27,7 @@ position = Vector2(0, 64)
 
 [node name="w" type="Node2D" parent="."]
 position = Vector2(-64, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_mlc4y")

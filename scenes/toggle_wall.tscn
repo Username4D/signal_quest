@@ -6,7 +6,7 @@
 size = Vector2(16, 64)
 
 [sub_resource type="QuadMesh" id="QuadMesh_oxi6q"]
-size = Vector2(16, 64)
+size = Vector2(32, 64)
 
 [node name="toggle_wall" type="StaticBody2D"]
 script = ExtResource("1_kwbpx")

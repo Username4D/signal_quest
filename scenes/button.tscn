@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy21vot1yevtm"]
+[gd_scene load_steps=6 format=3 uid="uid://dy21vot1yevtm"]
 
 [ext_resource type="Script" uid="uid://b17urisi0neb2" path="res://scripts/button.gd" id="1_mi6dp"]
+[ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="2_rhj8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhj8v"]
 size = Vector2(16, 64)
 
-[sub_resource type="QuadMesh" id="QuadMesh_3q610"]
-size = Vector2(0.5, 0.5)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q610"]
+atlas = ExtResource("2_rhj8v")
+region = Rect2(128, 128, 128, 128)
 
-[sub_resource type="QuadMesh" id="QuadMesh_i7y4x"]
-size = Vector2(0.25, 0.5)
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7y4x"]
+atlas = ExtResource("2_rhj8v")
+region = Rect2(256, 128, 128, 128)
 
 [node name="button" type="StaticBody2D" groups=["button"]]
 script = ExtResource("1_mi6dp")
@@ -18,14 +21,12 @@ script = ExtResource("1_mi6dp")
 position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_rhj8v")
 
-[node name="button_unpressed" type="MeshInstance2D" parent="."]
-self_modulate = Color(1, 0.05882353, 0.28235295, 1)
-position = Vector2(24, 0)
-scale = Vector2(32, 128)
-mesh = SubResource("QuadMesh_3q610")
+[node name="button_unpressed" type="Sprite2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_3q610")
 
-[node name="button_pressed" type="MeshInstance2D" parent="."]
-self_modulate = Color(1, 0.05882353, 0.28235295, 1)
-position = Vector2(28, 0)
-scale = Vector2(32, 128)
-mesh = SubResource("QuadMesh_i7y4x")
+[node name="button_pressed" type="Sprite2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_i7y4x")
