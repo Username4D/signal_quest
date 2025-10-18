@@ -20,3 +20,5 @@ func _ready() -> void:
 		var scene = item_scene.instantiate()
 		scene.name = i
 		self.add_child(scene)
+	self.get_parent().build.connect(func (): self.visible = true,)
+	self.get_parent().start.connect(func (): self.visible = false,)
