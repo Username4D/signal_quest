@@ -9,12 +9,12 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_rotate"):
 			$sprite.rotation_degrees += 90
 		if self.get_parent().get_parent().get_node("static_gp_tilemap").get_cell_source_id(psnapped(self.position) / 64) == -1:
-			$sprite.scale = Vector2(0.8,0.8)
-			ideal_position = psnapped(get_global_mouse_position() - Vector2(32,32))
+			$sprite.scale = Vector2(0.4,0.4)
+	
 		else:
-			$sprite.scale = Vector2(0.5,0.5)
-			ideal_position = get_global_mouse_position() - Vector2(32,32)
-		ideal_position = psnapped(get_global_mouse_position() - Vector2(32,32))
+			$sprite.scale = Vector2(0.25,0.25)
+
+		ideal_position = psnapped(get_global_mouse_position() -Vector2(32,32))
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			state_pressed = false
 			if not self.get_parent().get_parent().get_node("static_gp_tilemap").get_cell_source_id(psnapped(self.position) / 64) == -1:
@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 					gameplay_handler.inventory[i.Item] += 1
 					i.queue_free()
 	else:
-		$sprite.scale = Vector2.ONE
+		$sprite.scale = Vector2(.5,.5)
 	self.position = self.position.move_toward(ideal_position, 1024* delta)
 func _ready() -> void:
 	$sprite.texture.region = Rect2(atlas_position[Item] * 2, Vector2(128,128))
