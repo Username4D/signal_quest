@@ -67,7 +67,7 @@ func convert_placements(parent: Node):
 		var obj = inventory[i.Item].instantiate()
 		obj.position = i.global_position + Vector2(32,32)
 		obj.rotation = i.get_node("sprite").rotation
-		if i.Item == "rotator" or i.Item == "button":
+		if i.Item == "rotator" or i.Item == "button" or i.Item == "signal_emitter":
 			linker_tasks.append(obj)
 			linker_origins.append(i)
 		$conversions.add_child(obj)
@@ -96,3 +96,6 @@ func convert_placements(parent: Node):
 						print("scan")
 						print(round(n.position))
 						print(round(linker_tasks[i].position + Vector2(-64,0).rotated(linker_tasks[i].rotation)))
+			"signal_emitter":
+				linker_tasks[i].passive = true
+				linker_tasks[i].press()
