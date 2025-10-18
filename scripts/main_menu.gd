@@ -18,3 +18,10 @@ func _ready() -> void:
 func _on_play_pressed() -> void:
 	self.get_parent().add_child(load("res://scenes/level_menu.tscn").instantiate())
 	self.queue_free()
+
+
+func _on_credits_pressed() -> void:
+	$Camera2D.position.x += 1152
+
+func _on_credits_back_pressed() -> void:
+	$Camera2D.position.x -= 1152
