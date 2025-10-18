@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cv2nk0qcqr6ba"]
+[gd_scene load_steps=10 format=3 uid="uid://cv2nk0qcqr6ba"]
 
+[ext_resource type="Script" uid="uid://8r8tk3tji6gi" path="res://scripts/level_menu.gd" id="1_7obll"]
 [ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_rj3wb"]
 [ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="2_jqwib"]
+[ext_resource type="PackedScene" uid="uid://clujuis2c008n" path="res://scenes/level_button.tscn" id="4_teein"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7obll"]
 shader = ExtResource("1_rj3wb")
@@ -24,6 +26,7 @@ font = SubResource("FontVariation_wu84c")
 font_size = 66
 
 [node name="level_menu" type="Node2D"]
+script = ExtResource("1_7obll")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 material = SubResource("ShaderMaterial_7obll")
@@ -42,5 +45,35 @@ label_settings = SubResource("LabelSettings_2go0k")
 vertical_alignment = 1
 
 [node name="level_button_lines" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 64.0
+offset_top = 288.0
+offset_right = 1088.0
+offset_bottom = 352.0
+theme_override_constants/separation = 16
+
+[node name="1" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2
+
+[node name="2" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2
+
+[node name="3" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2
+
+[node name="4" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2
+
+[node name="5" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2
+
+[node name="6" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2
+
+[node name="7" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2
+
+[node name="8" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2
+
+[node name="9" parent="level_button_lines" instance=ExtResource("4_teein")]
+layout_mode = 2

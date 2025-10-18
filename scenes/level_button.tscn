@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://clujuis2c008n"]
+
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_i0sit"]
+[ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="2_o8246"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o8246"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrusj"]
+bg_color = Color(1, 1, 1, 0.13725491)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6g3el"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ium1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfgsp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0rp6"]
+shader = ExtResource("1_i0sit")
+shader_parameter/background = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6acxe"]
+shader = ExtResource("1_i0sit")
+shader_parameter/background = true
+
+[sub_resource type="FontVariation" id="FontVariation_hrusj"]
+base_font = ExtResource("2_o8246")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6g3el"]
+font = SubResource("FontVariation_hrusj")
+font_size = 61
+
+[node name="level_button" type="Button"]
+z_index = 2
+custom_minimum_size = Vector2(64, 64)
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o8246")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hrusj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6g3el")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ium1h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nfgsp")
+
+[node name="bg" type="Polygon2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_b0rp6")
+polygon = PackedVector2Array(64, 0, 64, 64, 0, 64, 0, 0)
+
+[node name="Label" type="Label" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_6acxe")
+layout_mode = 0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 80.0
+text = "1"
+label_settings = SubResource("LabelSettings_6g3el")
+horizontal_alignment = 1
+vertical_alignment = 1

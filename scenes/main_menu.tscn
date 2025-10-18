@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://dfrtywmnvxhtp"]
 
-[ext_resource type="Script" uid="uid://c4dp8el6n5xsq" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://c4dp8el6n5xsq" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="3_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dxmotkl4kj0te" path="res://scenes/signal.tscn" id="4_8ln24"]
@@ -16,14 +16,14 @@ shader_parameter/background = true
 shader = ExtResource("2_ekxnf")
 shader_parameter/background = false
 
-[sub_resource type="FontVariation" id="FontVariation_wu84c"]
+[sub_resource type="FontVariation" id="FontVariation_rtw2f"]
 base_font = ExtResource("3_bqqt6")
 variation_opentype = {
 2003265652: 400
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
-font = SubResource("FontVariation_wu84c")
+font = SubResource("FontVariation_rtw2f")
 font_size = 66
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wu84c"]
