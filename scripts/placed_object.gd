@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	if self.state_pressed:
 		if Input.is_action_just_pressed("ui_rotate"):
 			$sprite.rotation_degrees += 90
-		if self.get_parent().get_parent().get_node("static_gp_objects").get_cell_source_id(psnapped(self.position) / 64) == -1:
+		if self.get_parent().get_parent().get_node("static_gp_tilemap").get_cell_source_id(psnapped(self.position) / 64) == -1:
 			$sprite.scale = Vector2(0.8,0.8)
 			ideal_position = psnapped(get_global_mouse_position() - Vector2(32,32))
 		else:
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		ideal_position = psnapped(get_global_mouse_position() - Vector2(32,32))
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			state_pressed = false
-			if not self.get_parent().get_parent().get_node("static_gp_objects").get_cell_source_id(psnapped(self.position) / 64) == -1:
+			if not self.get_parent().get_parent().get_node("static_gp_tilemap").get_cell_source_id(psnapped(self.position) / 64) == -1:
 				gameplay_handler.inventory[Item] += 1
 				self.queue_free()
 				
