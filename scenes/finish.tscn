@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgixjtqv1a8n8"]
+
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_07gpw"]
+[ext_resource type="Texture2D" uid="uid://ke00ty7ry5df" path="res://assets/tileset_textures.svg" id="2_2pftv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m504p"]
+size = Vector2(20, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8g1v"]
+shader = ExtResource("1_07gpw")
+shader_parameter/background = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7jsg"]
+atlas = ExtResource("2_2pftv")
+region = Rect2(0, 256, 128, 128)
+
+[node name="finish" type="StaticBody2D" groups=["finish"]]
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-22, 0)
+shape = SubResource("RectangleShape2D_m504p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n8g1v")
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_q7jsg")

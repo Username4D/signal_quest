@@ -3,7 +3,7 @@ extends Node2D
 @export var game_state = "build" # build, finish, start
 signal start
 signal build
-
+signal finish
 @export var inventory =  {
  "wall": 2,
  "wall_angled": 3,
@@ -39,7 +39,7 @@ func _input(event: InputEvent) -> void:
 			print("start")
 			convert_placements($user_gp_objects)
 			$user_gp_objects.visible = false
-		elif game_state == "start":
+		elif game_state == "start" or game_state == "finish":
 			game_state = "build"
 			build.emit()
 			for i in $conversions.get_children():

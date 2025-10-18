@@ -27,6 +27,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 wall_angled=""
 button=""
 signal=""
+finish=""
 
 [gui]
 

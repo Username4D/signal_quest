@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://dtrnsgpe5umma"]
+[gd_scene load_steps=10 format=4 uid="uid://dtrnsgpe5umma"]
 
 [ext_resource type="Script" uid="uid://uylpcw88qumq" path="res://scripts/gameplay_view.gd" id="1_exiar"]
 [ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="2_0qrwo"]
 [ext_resource type="TileSet" uid="uid://b0xsw3lwvixpo" path="res://resources/gameplay_objects_tileset.tres" id="2_khje6"]
 [ext_resource type="PackedScene" uid="uid://ca8af6w4i2btf" path="res://scenes/signal_emitter.tscn" id="4_a4xli"]
 [ext_resource type="PackedScene" uid="uid://wwori4ekxduy" path="res://scenes/inventory.tscn" id="5_7nf73"]
+[ext_resource type="PackedScene" uid="uid://dgixjtqv1a8n8" path="res://scenes/finish.tscn" id="6_66ihu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a4xli"]
 shader = ExtResource("2_0qrwo")
@@ -56,5 +57,9 @@ mesh = SubResource("QuadMesh_66ihu")
 
 [node name="signal_emitter" parent="static_gp_objects" instance=ExtResource("4_a4xli")]
 position = Vector2(352, 96)
+
+[node name="finish" parent="static_gp_objects" instance=ExtResource("6_66ihu")]
+position = Vector2(928, 96)
+rotation = 3.1415927
 
 [node name="conversions" type="Node2D" parent="."]
