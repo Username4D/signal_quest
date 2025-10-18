@@ -14,3 +14,7 @@ func _ready() -> void:
 		RenderingServer.global_shader_parameter_set(ident[i], scheme[i])
 	for i in range(0,4):
 		RenderingServer.global_shader_parameter_set(ident[i] + "bg", schemebg[i])
+
+func _on_play_pressed() -> void:
+	self.get_parent().add_child(load("res://scenes/level_menu.tscn").instantiate())
+	self.queue_free()

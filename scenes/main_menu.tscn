@@ -125,3 +125,5 @@ position = Vector2(992, 96)
 
 [node name="wall2" parent="." instance=ExtResource("5_rtw2f")]
 position = Vector2(992, 544)
+
+[connection signal="pressed" from="buttons/play" to="." method="_on_play_pressed"]
