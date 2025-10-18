@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv2nk0qcqr6ba"]
+
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_rj3wb"]
+[ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="2_jqwib"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7obll"]
+shader = ExtResource("1_rj3wb")
+shader_parameter/background = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_teein"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k08aj"]
+shader = ExtResource("1_rj3wb")
+shader_parameter/background = false
+
+[sub_resource type="FontVariation" id="FontVariation_wu84c"]
+base_font = ExtResource("2_jqwib")
+variation_opentype = {
+2003265652: 400
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_2go0k"]
+font = SubResource("FontVariation_wu84c")
+font_size = 66
+
+[node name="level_menu" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_7obll")
+position = Vector2(575.75, 335.75)
+scale = Vector2(1152.4999, 672.5)
+mesh = SubResource("QuadMesh_teein")
+
+[node name="Label" type="Label" parent="."]
+material = SubResource("ShaderMaterial_k08aj")
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 896.0
+offset_bottom = 192.0
+text = "Levels:"
+label_settings = SubResource("LabelSettings_2go0k")
+vertical_alignment = 1
+
+[node name="level_button_lines" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
