@@ -9,7 +9,7 @@ func press():
 	if passive:
 		var signal_obj = signal_scene.instantiate()
 		signal_obj.position = self.global_position
-		signal_obj.rotation = self.rotation
+		signal_obj.rotation_virtual = self.rotation_degrees
 		self.get_parent().get_parent().get_node("signals").add_child(signal_obj)
 
 func start():
@@ -17,7 +17,7 @@ func start():
 	if not passive:
 		var signal_obj = signal_scene.instantiate()
 		signal_obj.position = self.global_position
-		signal_obj.rotation = self.rotation
+		signal_obj.rotation_virtual = self.rotation_degrees
 		self.get_parent().get_parent().get_node("signals").add_child(signal_obj)
 	
 func _ready() -> void:

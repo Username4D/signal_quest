@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const speed = 250
 
-var rotation_virtual = 0
+@export var rotation_virtual = 0
 
 func _physics_process(delta: float) -> void:
 	
@@ -43,4 +43,5 @@ func stop() -> void:
 	self.queue_free()
 
 func _ready() -> void:
-	self.get_parent().get_parent().build.connect(stop)
+	if self.get_parent().get_parent().has_signal("build"):
+		self.get_parent().get_parent().build.connect(stop)

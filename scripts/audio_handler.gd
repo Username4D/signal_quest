@@ -8,7 +8,7 @@ func request(audio: String, host: Node):
 	if audio == "start":
 		stream.volume_db -= 16
 	host.add_child.call_deferred(stream)
-	await get_tree().process_frame
+	 
 	stream.playing = true
 	await stream.finished
 	stream.queue_free()
