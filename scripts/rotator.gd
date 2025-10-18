@@ -13,6 +13,7 @@ var target_rotation = 0
 var og = 0
 func press():
 	target_rotation += 90
+	audio_handler.request("rotator", self)
 func _physics_process(delta: float) -> void:
 
 	vrotation_degrees = move_toward(vrotation_degrees, target_rotation, speed * delta)

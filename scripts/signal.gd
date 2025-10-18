@@ -22,11 +22,13 @@ func _physics_process(delta: float) -> void:
 				
 				self.rotation_virtual += 180
 			
-		
+			audio_handler.request("wall", self)
 		elif $ray.get_collider().is_in_group("button"):
 			$ray.get_collider().press()
 			self.rotation_virtual += 180
+			audio_handler.request("button", self)
 		else:
+			audio_handler.request("wall", self)
 			self.rotation_virtual += 180
 	self.rotation_virtual = round(self.rotation_virtual)
 	self.rotation_virtual = fmod(rotation_virtual, 360)

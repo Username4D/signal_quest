@@ -30,7 +30,7 @@ func _ready() -> void:
 		i.queue_free()
 	print("build")
 	$user_gp_objects.visible = true
-
+	await get_tree().process_frame
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_start"):
 		if game_state == "build":
