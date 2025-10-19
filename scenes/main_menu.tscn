@@ -62,8 +62,8 @@ colors_schemes_bg = [[Color(0.9801126, 0.7137965, 1, 1), Color(0.6781554, 0.7282
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 material = SubResource("ShaderMaterial_bqqt6")
-position = Vector2(1088.0001, 320)
-scale = Vector2(2495.9998, 666.947)
+position = Vector2(400.00006, 320)
+scale = Vector2(3872, 666.947)
 mesh = SubResource("QuadMesh_wu84c")
 
 [node name="Label" type="Label" parent="."]
@@ -123,10 +123,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_rtw2f")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
 text = "credits"
 alignment = 0
-
-[node name="signal" parent="." instance=ExtResource("4_8ln24")]
-position = Vector2(992, 288)
-rotation_virtual = -90
 
 [node name="wall" parent="." instance=ExtResource("5_rtw2f")]
 position = Vector2(992, 96)
@@ -208,6 +204,12 @@ DISCLAIMER
 THE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE."
 label_settings = SubResource("LabelSettings_rtw2f")
 autowrap_mode = 2
+
+[node name="signal" type="Node2D" parent="."]
+
+[node name="signal" parent="signal" instance=ExtResource("4_8ln24")]
+position = Vector2(992, 288)
+rotation_virtual = -90
 
 [connection signal="pressed" from="buttons/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="buttons/credits" to="." method="_on_credits_pressed"]

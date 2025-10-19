@@ -14,6 +14,7 @@ func _ready() -> void:
 		RenderingServer.global_shader_parameter_set(ident[i], scheme[i])
 	for i in range(0,4):
 		RenderingServer.global_shader_parameter_set(ident[i] + "bg", schemebg[i])
+	transition_in()
 
 func _on_play_pressed() -> void:
 	await transition()
@@ -36,6 +37,19 @@ func transition():
 		$wall.modulate.a = 4 * timer.time_left
 		$wall2.modulate.a  = 4 * timer.time_left
 		$Label.modulate.a  = 4 * timer.time_left
+		await get_tree().process_frame
+		print(timer.time_left)
+	return
+
+func transition_in():
+	var timer = get_tree().create_timer(0.25)
+	
+	while timer.time_left != 0:
+		$buttons.modulate.a =1 - 4 * timer.time_left
+		$signal.modulate.a = 1- 4 * timer.time_left
+		$wall.modulate.a =1- 4 * timer.time_left
+		$wall2.modulate.a  =1- 4 * timer.time_left
+		$Label.modulate.a  = 1-4 * timer.time_left
 		await get_tree().process_frame
 		print(timer.time_left)
 	return

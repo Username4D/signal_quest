@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cv2nk0qcqr6ba"]
+[gd_scene load_steps=17 format=3 uid="uid://cv2nk0qcqr6ba"]
 
 [ext_resource type="Script" uid="uid://8r8tk3tji6gi" path="res://scripts/level_menu.gd" id="1_7obll"]
 [ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_rj3wb"]
@@ -25,6 +25,27 @@ variation_opentype = {
 font = SubResource("FontVariation_wu84c")
 font_size = 66
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_teein"]
+shader = ExtResource("1_rj3wb")
+shader_parameter/background = false
+
+[sub_resource type="FontVariation" id="FontVariation_k08aj"]
+base_font = ExtResource("2_jqwib")
+variation_opentype = {
+2003265652: 400
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2go0k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdp46"]
+bg_color = Color(1, 1, 1, 0.0627451)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0fjm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6flmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxgv2"]
+
 [node name="level_menu" type="Node2D"]
 script = ExtResource("1_7obll")
 
@@ -35,14 +56,13 @@ scale = Vector2(1152.4999, 672.5)
 mesh = SubResource("QuadMesh_teein")
 
 [node name="content" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 
 [node name="Label" type="Label" parent="content"]
 material = SubResource("ShaderMaterial_k08aj")
 offset_left = 64.0
-offset_top = 64.0
+offset_top = 128.0
 offset_right = 896.0
-offset_bottom = 192.0
+offset_bottom = 256.0
 text = "Levels:"
 label_settings = SubResource("LabelSettings_2go0k")
 vertical_alignment = 1
@@ -80,3 +100,22 @@ layout_mode = 2
 
 [node name="9" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
+
+[node name="credits_back" type="Button" parent="content"]
+material = SubResource("ShaderMaterial_teein")
+custom_minimum_size = Vector2(0, 64)
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 512.0
+offset_bottom = 96.0
+theme_override_fonts/font = SubResource("FontVariation_k08aj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2go0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qdp46")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u0fjm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6flmm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wxgv2")
+text = "back"
+alignment = 0
+
+[connection signal="pressed" from="content/credits_back" to="." method="_on_credits_back_pressed"]
