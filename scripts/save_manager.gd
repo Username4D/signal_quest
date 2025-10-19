@@ -1,6 +1,6 @@
 extends Node
 
-var max_level = 0
+var max_level = 1
 var sfx_volume = 1
 var high_contrast_mode = false
 

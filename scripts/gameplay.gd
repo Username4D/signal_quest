@@ -12,6 +12,10 @@ func back():
 	pass
 func finish():
 	$finish.visible = true
+	if save_manager.max_level <= current_level:
+		save_manager.max_level = current_level + 1
+		save_manager.save()
+	
 
 func _ready() -> void:
 	var level_scene = load("res://scenes/levels/level_" + var_to_str(current_level) + ".tscn").instantiate()
