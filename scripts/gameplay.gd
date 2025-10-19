@@ -16,7 +16,14 @@ func reset():
 func close():
 	$level.cose()
 func back():
-	pass
+	var timer = get_tree().create_timer(0.25)
+	while timer.time_left != 0:
+		$pause_menu.modulate.a = timer.time_left * 4
+		level.modulate.a = timer.time_left * 4
+		$finish.modulate.a = timer.time_left * 4
+		await get_tree().process_frame
+	self.get_parent().add_child(load("res://scenes/level_menu.tscn").instantiate())
+	self.queue_free()
 func finish():
 	$finish.visible = true
 	if save_manager.max_level <= current_level:

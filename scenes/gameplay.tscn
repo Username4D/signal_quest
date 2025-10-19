@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvemuy8jfgxbl"]
+[gd_scene load_steps=7 format=3 uid="uid://bvemuy8jfgxbl"]
 
 [ext_resource type="Script" uid="uid://dq4bwkyeh1xs2" path="res://scripts/gameplay.gd" id="1_l1v76"]
 [ext_resource type="PackedScene" uid="uid://cqlxc6huf60vd" path="res://scenes/pause_menu.tscn" id="2_l1v76"]
 [ext_resource type="PackedScene" uid="uid://6qatxunndb3a" path="res://scenes/finish_menu.tscn" id="4_ct7aa"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="4_ocj2s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_din8e"]
+shader = ExtResource("4_ocj2s")
+shader_parameter/background = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_4bh5q"]
 
 [node name="gameplay" type="Node2D"]
 script = ExtResource("1_l1v76")
@@ -12,3 +19,9 @@ visible = false
 
 [node name="finish" parent="." instance=ExtResource("4_ct7aa")]
 visible = false
+
+[node name="BG" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_din8e")
+position = Vector2(623.75, 351.75)
+scale = Vector2(1248.5, 704.5)
+mesh = SubResource("QuadMesh_4bh5q")

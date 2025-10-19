@@ -6,8 +6,8 @@ func _ready() -> void:
 		i.get_node("Label").text = i.name
 		if int(i.name) > save_manager.max_level:
 			i.modulate.a = .5
-	#	else:
-#			i.pressed.connect(pressed.bind(i))
+		else:
+			i.pressed.connect(pressed.bind(i))
 	var timer = get_tree().create_timer(0.25)
 	while timer.time_left != 0:
 		$content.modulate.a = 1 - 4 * timer.time_left
