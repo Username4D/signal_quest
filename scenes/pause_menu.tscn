@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqlxc6huf60vd"]
+[gd_scene load_steps=9 format=3 uid="uid://cqlxc6huf60vd"]
 
+[ext_resource type="Script" uid="uid://biskdeja0je5q" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="1_n87rw"]
 
 [sub_resource type="FontVariation" id="FontVariation_myx47"]
@@ -23,6 +24,7 @@ offset_top = 128.0
 offset_right = 960.0
 offset_bottom = 512.0
 color = Color(1, 1, 1, 0.09803922)
+script = ExtResource("1_myx47")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -92,3 +94,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_7l7mv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4r4p")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1s2dm")
 text = "Close"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
