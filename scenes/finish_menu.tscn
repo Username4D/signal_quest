@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://6qatxunndb3a"]
+
+[ext_resource type="Script" uid="uid://nkng0d5o5b24" path="res://scripts/finish_menu.gd" id="1_5bjue"]
+[ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="2_4irhi"]
+
+[sub_resource type="FontVariation" id="FontVariation_myx47"]
+base_font = ExtResource("2_4irhi")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kukqi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
+bg_color = Color(1, 1, 1, 0.06666667)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l7mv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4r4p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1s2dm"]
+
+[sub_resource type="FontVariation" id="FontVariation_jwrqb"]
+base_font = ExtResource("2_4irhi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7f85g"]
+font = SubResource("FontVariation_jwrqb")
+font_size = 71
+
+[node name="finish" type="ColorRect"]
+z_index = 16
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 960.0
+offset_bottom = 512.0
+color = Color(1, 1, 1, 0.09803922)
+script = ExtResource("1_5bjue")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -256.0
+offset_top = -160.0
+offset_right = 992.0
+offset_bottom = 576.0
+color = Color(1, 1, 1, 0)
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 640.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_myx47")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kukqi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7l7mv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4r4p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1s2dm")
+text = "Back to menu"
+
+[node name="close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 640.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_myx47")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kukqi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7l7mv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4r4p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1s2dm")
+text = "Close"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 768.0
+offset_bottom = 160.0
+text = "Level completed!"
+label_settings = SubResource("LabelSettings_7f85g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

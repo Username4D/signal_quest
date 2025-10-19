@@ -32,7 +32,7 @@ func _ready() -> void:
 	$user_gp_objects.visible = true
 	await get_tree().process_frame
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_start"):
+	if Input.is_action_just_pressed("ui_start") and self.get_parent().get_node("pause_menu").visible == false:
 		if game_state == "build":
 			game_state = "start"
 			start.emit()
@@ -40,6 +40,7 @@ func _input(event: InputEvent) -> void:
 			convert_placements($user_gp_objects)
 			$user_gp_objects.visible = false
 		elif game_state == "start" or game_state == "finish":
+			self.get_parent().get_node("finish").visible = false
 			game_state = "build"
 			build.emit()
 			for i in $conversions.get_children():
@@ -99,3 +100,12 @@ func convert_placements(parent: Node):
 			"signal_emitter":
 				linker_tasks[i].passive = true
 				linker_tasks[i].press()
+
+func cose():
+	self.get_parent().get_node("finish").visible = false
+	game_state = "build"
+	build.emit()
+	for i in $conversions.get_children():
+		i.queue_free()
+	print("build")
+	$user_gp_objects.visible = true
