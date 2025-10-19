@@ -28,7 +28,8 @@ func _ready() -> void:
 			RenderingServer.global_shader_parameter_set(ident[i] + "bg", colorsbg[i])
 	build.emit()
 	for i in $conversions.get_children():
-		i.queue_free()
+		if not i.is_in_group("premade"):
+			i.queue_free()
 	print("build")
 	$user_gp_objects.visible = true
 	await get_tree().process_frame
@@ -45,7 +46,8 @@ func _input(event: InputEvent) -> void:
 			game_state = "build"
 			build.emit()
 			for i in $conversions.get_children():
-				i.queue_free()
+				if not i.is_in_group("premade"):
+					i.queue_free()
 			print("build")
 			$user_gp_objects.visible = true
 func convert_placements(parent: Node):
@@ -107,6 +109,7 @@ func cose():
 	game_state = "build"
 	build.emit()
 	for i in $conversions.get_children():
-		i.queue_free()
+		if not i.is_in_group("premade"):
+			i.queue_free()
 	print("build")
 	$user_gp_objects.visible = true

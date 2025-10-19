@@ -30,6 +30,7 @@ wall_angled=""
 button=""
 signal=""
 finish=""
+premade=""
 
 [gui]
 
