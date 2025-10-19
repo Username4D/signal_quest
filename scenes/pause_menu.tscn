@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqlxc6huf60vd"]
+
+[ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="1_n87rw"]
+
+[sub_resource type="FontVariation" id="FontVariation_myx47"]
+base_font = ExtResource("1_n87rw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kukqi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
+bg_color = Color(1, 1, 1, 0.06666667)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l7mv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4r4p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1s2dm"]
+
+[node name="pause_menu" type="ColorRect"]
+z_index = 16
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 960.0
+offset_bottom = 512.0
+color = Color(1, 1, 1, 0.09803922)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -256.0
+offset_top = -160.0
+offset_right = 992.0
+offset_bottom = 576.0
+color = Color(1, 1, 1, 0)
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_myx47")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kukqi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7l7mv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4r4p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1s2dm")
+text = "Back to menu"
+
+[node name="reset" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 640.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_myx47")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kukqi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7l7mv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4r4p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1s2dm")
+text = "Reset level"
+
+[node name="close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 640.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_myx47")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kukqi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7l7mv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v4r4p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1s2dm")
+text = "Close"
