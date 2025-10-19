@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://dfrtywmnvxhtp"]
+[gd_scene load_steps=21 format=3 uid="uid://dfrtywmnvxhtp"]
 
 [ext_resource type="Script" uid="uid://c4dp8el6n5xsq" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="3_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dxmotkl4kj0te" path="res://scenes/signal.tscn" id="4_8ln24"]
 [ext_resource type="PackedScene" uid="uid://3gg7kmtytfne" path="res://scenes/wall.tscn" id="5_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://jli7j4sh0fla" path="res://scenes/settings_menu.tscn" id="6_rtw2f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bqqt6"]
 shader = ExtResource("2_ekxnf")
@@ -152,6 +153,23 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
 text = "back"
 alignment = 0
 
+[node name="credits_back2" type="Button" parent="."]
+material = SubResource("ShaderMaterial_wu84c")
+custom_minimum_size = Vector2(0, 64)
+offset_left = -1120.0
+offset_top = 32.0
+offset_right = -672.0
+offset_bottom = 96.0
+theme_override_fonts/font = SubResource("FontVariation_8ln24")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bqqt6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8ln24")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rtw2f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
+text = "back"
+alignment = 0
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 offset_left = 1184.0
 offset_top = 96.0
@@ -211,6 +229,11 @@ autowrap_mode = 2
 position = Vector2(992, 288)
 rotation_virtual = -90
 
+[node name="settings_menu" parent="." instance=ExtResource("6_rtw2f")]
+position = Vector2(-1152, 0)
+
 [connection signal="pressed" from="buttons/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="buttons/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="credits_back" to="." method="_on_credits_back_pressed"]
+[connection signal="pressed" from="credits_back2" to="." method="_on_credits_back_2_pressed"]

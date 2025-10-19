@@ -68,33 +68,33 @@ renderer/rendering_method.mobile="gl_compatibility"
 
 topleft={
 "type": "vec4",
-"value": Vector4(0.5, 0.5, 0, 1)
+"value": Vector4(1, 1, 1, 1)
 }
 topright={
 "type": "vec4",
-"value": Vector4(0.5, 0, 0.5, 1)
+"value": Vector4(1, 1, 1, 1)
 }
 bottomleft={
 "type": "vec4",
-"value": Vector4(1, 0, 0, 1)
+"value": Vector4(1, 1, 1, 1)
 }
 bottomright={
 "type": "vec4",
-"value": Vector4(0, 0, 1, 1)
+"value": Vector4(1, 1, 1, 1)
 }
 topleftbg={
 "type": "vec4",
-"value": Vector4(0, 0.5, 0.5, 1)
+"value": Vector4(0, 0, 0, 1)
 }
 toprightbg={
 "type": "vec4",
-"value": Vector4(0.5, 0.5, 0, 1)
+"value": Vector4(0, 0, 0, 1)
 }
 bottomleftbg={
 "type": "vec4",
-"value": Vector4(0, 1, 0, 1)
+"value": Vector4(0, 0, 0, 1)
 }
 bottomrightbg={
 "type": "vec4",
-"value": Vector4(0, 1, 0, 1)
+"value": Vector4(0, 0, 0, 1)
 }

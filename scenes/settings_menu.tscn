@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://jli7j4sh0fla"]
+
+[ext_resource type="FontFile" uid="uid://14dupcwgowyv" path="res://assets/Quicksand-VariableFont_wght.ttf" id="1_05p07"]
+[ext_resource type="Shader" uid="uid://b1qnwyojwnbjx" path="res://resources/gradient.gdshader" id="1_cr101"]
+[ext_resource type="Script" uid="uid://b6rj8euose4xf" path="res://scripts/settings_menu.gd" id="1_wswnh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wswnh"]
+shader = ExtResource("1_cr101")
+shader_parameter/background = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_cr101"]
+font = ExtResource("1_05p07")
+font_size = 33
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05p07"]
+
+[node name="settings_menu" type="Node2D"]
+script = ExtResource("1_wswnh")
+
+[node name="label_volume" type="Label" parent="."]
+material = SubResource("ShaderMaterial_wswnh")
+offset_top = 192.0
+offset_right = 1152.0
+offset_bottom = 256.0
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_cr101")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label_hcm" type="Label" parent="."]
+material = SubResource("ShaderMaterial_wswnh")
+offset_top = 320.0
+offset_right = 1152.0
+offset_bottom = 384.0
+text = "High contrast mode (applied on restart)"
+label_settings = SubResource("LabelSettings_cr101")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="volume" type="HSlider" parent="."]
+modulate = Color(11.637973, 18.892157, 18.892157, 1)
+material = SubResource("ShaderMaterial_wswnh")
+offset_left = 320.0
+offset_top = 256.0
+offset_right = 832.0
+offset_bottom = 288.0
+max_value = 1.0
+step = 0.1
+
+[node name="CheckBox" type="CheckBox" parent="."]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+material = SubResource("ShaderMaterial_wswnh")
+offset_left = 560.0
+offset_top = 384.0
+offset_right = 584.0
+offset_bottom = 408.0
+scale = Vector2(1.333, 1.333)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05p07")
+icon_alignment = 1
+
+[connection signal="drag_ended" from="volume" to="." method="update"]
+[connection signal="value_changed" from="volume" to="." method="_on_volume_value_changed"]
+[connection signal="button_up" from="CheckBox" to="." method="update"]

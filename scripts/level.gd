@@ -21,10 +21,11 @@ signal finish
 func _ready() -> void:
 	gameplay_handler.inventory = inventory
 	var ident = ["topleft", "topright", "bottomleft", "bottomright"]
-	for i in range(0,4):
-		RenderingServer.global_shader_parameter_set(ident[i], colors[i])
-	for i in range(0,4):
-		RenderingServer.global_shader_parameter_set(ident[i] + "bg", colorsbg[i])
+	if not save_manager.high_contrast_mode:
+		for i in range(0,4):
+			RenderingServer.global_shader_parameter_set(ident[i], colors[i])
+		for i in range(0,4):
+			RenderingServer.global_shader_parameter_set(ident[i] + "bg", colorsbg[i])
 	build.emit()
 	for i in $conversions.get_children():
 		i.queue_free()

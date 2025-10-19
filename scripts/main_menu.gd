@@ -10,10 +10,11 @@ func _ready() -> void:
 	var scheme = colors_schemes[scheme_id]
 	var schemebg = colors_schemes_bg[scheme_id]
 	var ident = ["topleft", "topright", "bottomleft", "bottomright"]
-	for i in range(0,4):
-		RenderingServer.global_shader_parameter_set(ident[i], scheme[i])
-	for i in range(0,4):
-		RenderingServer.global_shader_parameter_set(ident[i] + "bg", schemebg[i])
+	if save_manager.high_contrast_mode != true:
+		for i in range(0,4):
+			RenderingServer.global_shader_parameter_set(ident[i], scheme[i])
+		for i in range(0,4):
+			RenderingServer.global_shader_parameter_set(ident[i] + "bg", schemebg[i])
 	transition_in()
 
 func _on_play_pressed() -> void:
@@ -53,3 +54,12 @@ func transition_in():
 		await get_tree().process_frame
 		print(timer.time_left)
 	return
+
+
+func _on_credits_back_2_pressed() -> void:
+	$Camera2D.position.x += 1152
+
+
+
+func _on_settings_pressed() -> void:
+	$Camera2D.position.x -= 1152

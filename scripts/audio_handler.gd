@@ -5,6 +5,7 @@ var sounds = {"button": "res://assets/button.wav", "wall": "res://assets/wall.wa
 func request(audio: String, host: Node):
 	var stream = AudioStreamPlayer.new()
 	stream.stream = AudioStreamWAV.load_from_file(sounds[audio])
+	stream.volume_linear = save_manager.sfx_volume
 	if audio == "start":
 		stream.volume_db -= 16
 	host.add_child.call_deferred(stream)
