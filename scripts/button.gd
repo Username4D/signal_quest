@@ -10,7 +10,7 @@ func press():
 		$button_pressed.visible = true
 		$button_unpressed.visible = false
 		get_tree().create_timer(0.3).timeout.connect(cooldown_end)
-	print("LOL")
+
 func cooldown_end():
 	on_cooldown = false
 	$button_pressed.visible = false

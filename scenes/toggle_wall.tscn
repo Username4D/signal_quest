@@ -17,6 +17,7 @@ size = Vector2(32, 64)
 script = ExtResource("1_kwbpx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_k8sp1")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]

@@ -39,7 +39,7 @@ func transition():
 		$wall2.modulate.a  = 4 * timer.time_left
 		$Label.modulate.a  = 4 * timer.time_left
 		await get_tree().process_frame
-		print(timer.time_left)
+
 	return
 
 func transition_in():
@@ -52,8 +52,6 @@ func transition_in():
 		$wall2.modulate.a  =1- 4 * timer.time_left
 		$Label.modulate.a  = 1-4 * timer.time_left
 		await get_tree().process_frame
-		print(timer.time_left)
-	return
 
 
 func _on_credits_back_2_pressed() -> void:

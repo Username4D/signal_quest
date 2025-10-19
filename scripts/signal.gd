@@ -11,12 +11,13 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if $ray.is_colliding():
-
+		
+		print(fmod(round($ray.get_collider().rotation_degrees ), 360), " ",fmod(round(self.rotation_virtual), 360) )
 		if $ray.get_collider().is_in_group("wall_angled"):
 			
-			if fmod(round($ray.get_collider().rotation_degrees ), 360)== round(self.rotation_virtual):
+			if fmod(round($ray.get_collider().rotation_degrees ), 360)==fmod(round(self.rotation_virtual), 360) or fmod(round($ray.get_collider().rotation_degrees - 360 ), 360)==fmod(round(self.rotation_virtual), 360):
 				self.rotation_virtual += 90
-			elif fmod(round($ray.get_collider().rotation_degrees ) + 270, 360) == round(self.rotation_virtual) or fmod(round($ray.get_collider().rotation_degrees ) - 90, 360) == round(self.rotation_virtual):
+			elif fmod(round($ray.get_collider().rotation_degrees ) + 270, 360) == fmod(round(self.rotation_virtual), 360) or fmod(round($ray.get_collider().rotation_degrees ) - 90, 360) == fmod(round(self.rotation_virtual), 360):
 				self.rotation_virtual += -90
 			else:
 				

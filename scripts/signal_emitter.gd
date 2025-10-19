@@ -14,7 +14,6 @@ func press():
 		self.get_parent().get_parent().get_node("signals").add_child(signal_obj)
 
 func start():
-	print("shot")
 	if not passive:
 		audio_handler.request("button", self)
 		var signal_obj = signal_scene.instantiate()
@@ -24,4 +23,3 @@ func start():
 	
 func _ready() -> void:
 	self.get_parent().get_parent().start.connect(start)
-	print(self.get_parent().get_parent().start)
