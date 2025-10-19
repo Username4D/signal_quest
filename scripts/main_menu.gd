@@ -16,6 +16,7 @@ func _ready() -> void:
 		RenderingServer.global_shader_parameter_set(ident[i] + "bg", schemebg[i])
 
 func _on_play_pressed() -> void:
+	await transition()
 	self.get_parent().add_child(load("res://scenes/level_menu.tscn").instantiate())
 	self.queue_free()
 
@@ -25,3 +26,16 @@ func _on_credits_pressed() -> void:
 
 func _on_credits_back_pressed() -> void:
 	$Camera2D.position.x -= 1152
+
+func transition():
+	var timer = get_tree().create_timer(0.25)
+
+	while timer.time_left != 0:
+		$buttons.modulate.a = 4 * timer.time_left
+		$signal.modulate.a = 4 * timer.time_left
+		$wall.modulate.a = 4 * timer.time_left
+		$wall2.modulate.a  = 4 * timer.time_left
+		$Label.modulate.a  = 4 * timer.time_left
+		await get_tree().process_frame
+		print(timer.time_left)
+	return

@@ -34,7 +34,10 @@ position = Vector2(575.75, 335.75)
 scale = Vector2(1152.4999, 672.5)
 mesh = SubResource("QuadMesh_teein")
 
-[node name="Label" type="Label" parent="."]
+[node name="content" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="content"]
 material = SubResource("ShaderMaterial_k08aj")
 offset_left = 64.0
 offset_top = 64.0
@@ -44,36 +47,36 @@ text = "Levels:"
 label_settings = SubResource("LabelSettings_2go0k")
 vertical_alignment = 1
 
-[node name="level_button_lines" type="HBoxContainer" parent="."]
+[node name="level_button_lines" type="HBoxContainer" parent="content"]
 offset_left = 64.0
 offset_top = 288.0
 offset_right = 1088.0
 offset_bottom = 352.0
 theme_override_constants/separation = 16
 
-[node name="1" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="1" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="2" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="2" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="3" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="3" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="4" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="4" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="5" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="5" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="6" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="6" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="7" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="7" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="8" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="8" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="9" parent="level_button_lines" instance=ExtResource("4_teein")]
+[node name="9" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
