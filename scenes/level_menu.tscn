@@ -86,21 +86,6 @@ layout_mode = 2
 [node name="4" parent="content/level_button_lines" instance=ExtResource("4_teein")]
 layout_mode = 2
 
-[node name="5" parent="content/level_button_lines" instance=ExtResource("4_teein")]
-layout_mode = 2
-
-[node name="6" parent="content/level_button_lines" instance=ExtResource("4_teein")]
-layout_mode = 2
-
-[node name="7" parent="content/level_button_lines" instance=ExtResource("4_teein")]
-layout_mode = 2
-
-[node name="8" parent="content/level_button_lines" instance=ExtResource("4_teein")]
-layout_mode = 2
-
-[node name="9" parent="content/level_button_lines" instance=ExtResource("4_teein")]
-layout_mode = 2
-
 [node name="credits_back" type="Button" parent="content"]
 material = SubResource("ShaderMaterial_teein")
 custom_minimum_size = Vector2(0, 64)

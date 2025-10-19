@@ -20,6 +20,10 @@ gameplay_handler="*res://scripts/gameplay_handler.gd"
 audio_handler="*res://scripts/audio_handler.gd"
 save_manager="*res://scripts/save_manager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
