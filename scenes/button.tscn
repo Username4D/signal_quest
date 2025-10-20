@@ -13,7 +13,7 @@ shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q610"]
 atlas = ExtResource("2_rhj8v")
-region = Rect2(128, 128, 128, 128)
+region = Rect2(288, 288, 256, 256)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bdt2"]
 shader = ExtResource("2_3q610")
@@ -21,7 +21,7 @@ shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7y4x"]
 atlas = ExtResource("2_rhj8v")
-region = Rect2(256, 128, 128, 128)
+region = Rect2(576, 288, 256, 256)
 
 [node name="button" type="StaticBody2D" groups=["button"]]
 script = ExtResource("1_mi6dp")
@@ -32,10 +32,10 @@ shape = SubResource("RectangleShape2D_rhj8v")
 
 [node name="button_unpressed" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_i7y4x")
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = SubResource("AtlasTexture_3q610")
 
 [node name="button_pressed" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_1bdt2")
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = SubResource("AtlasTexture_i7y4x")

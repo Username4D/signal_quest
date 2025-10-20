@@ -9,7 +9,7 @@ shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qnbd"]
 atlas = ExtResource("1_jytgm")
-region = Rect2(128, 0, 128, 128)
+region = Rect2(288, 0, 256, 256)
 
 [node name="wall_angled" type="StaticBody2D" groups=["wall_angled"]]
 
@@ -18,5 +18,5 @@ polygon = PackedVector2Array(-32, -32, 32, 32, 32, -32)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_s52u2")
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = SubResource("AtlasTexture_6qnbd")

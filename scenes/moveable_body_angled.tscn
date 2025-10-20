@@ -10,7 +10,7 @@ shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qb8x3"]
 atlas = ExtResource("2_orykq")
-region = Rect2(384, 128, 128, 128)
+region = Rect2(864, 288, 256, 256)
 
 [node name="moveable_body_angled" type="AnimatableBody2D" groups=["wall_angled"]]
 script = ExtResource("1_yii2u")
@@ -23,5 +23,5 @@ polygon = PackedVector2Array(32, 32, 32, -32, -32, -32)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ikxye")
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = SubResource("AtlasTexture_qb8x3")

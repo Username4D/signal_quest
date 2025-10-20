@@ -10,12 +10,12 @@ shader_parameter/background = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1t8v"]
 atlas = ExtResource("1_umso6")
-region = Rect2(256, 0, 128, 128)
+region = Rect2(576, 0, 256, 256)
 filter_clip = true
 
 [node name="signal_emitter" type="Sprite2D"]
 material = SubResource("ShaderMaterial_pm83x")
 position = Vector2(0, 9.536743e-07)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = SubResource("AtlasTexture_v1t8v")
 script = ExtResource("2_umso6")
